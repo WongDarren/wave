@@ -4,8 +4,8 @@ const router = express.Router();
 
 // https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html
 
-// @route    GET api/champions
-// @desc     Get all champions
+// @route    GET api/summoner
+// @desc     Get one summoner
 // @access   Public
 router.get('/', async (req, res) => {
 	// create a const for NA version

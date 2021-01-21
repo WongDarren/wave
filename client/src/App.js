@@ -1,19 +1,19 @@
 import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-// Redux
-import { Provider } from 'react-redux';
-import store from './redux/store';
+// Components
+import Champions from './components/champions/Champions';
 
 const App = () => {
 	return (
-		<Provider store={store}>
+		<Router>
 			<Fragment>
-				<div>
-					<h1>hello</h1>
-				</div>
+				<Switch>
+					<Route exact path='/champions' component={Champions} />
+				</Switch>
 			</Fragment>
-		</Provider>
+		</Router>
 	);
 };
 
