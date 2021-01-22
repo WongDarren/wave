@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 const Champions = (props) => {
-	const [champ, setChamp] = useState(null);
+	const [champsList, setChamps] = useState(null);
 
 	useEffect(() => {
 		async function getChamps() {
 			const res = await axios.get('/api/champions');
 			const champs = res.data;
+			console.log('The champs that I requested: ');
 			console.log(champs);
-			setChamp(champs.data);
+
+			setChamps(champs);
 		}
 		getChamps();
 	}, []);
@@ -18,7 +20,13 @@ const Champions = (props) => {
 	return (
 		<Fragment>
 			<h1>Champions Component</h1>
-			{champ && <div>{champ.Aatrox.name}</div>}
+			{champsList && console.log(Object.values(champsList))}
+			{champsList &&
+				Object.values(champsList).map((champion) => (
+					<p key={champion.key}>
+						{champion.name} - {champion.title}
+					</p>
+				))}
 		</Fragment>
 	);
 };

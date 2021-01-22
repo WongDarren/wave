@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
 			`http://ddragon.leagueoflegends.com/cdn/${naData.data.v}/data/en_US/champion.json`
 		);
 
-		res.json(champData.data);
+		res.json(champData.data.data);
 	} catch (error) {
 		console.error(error.message);
 		res.status(500).send('Server Error');
