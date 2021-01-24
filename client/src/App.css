@@ -1,0 +1,21 @@
+body {
+	background-color: orange;
+}
+
+.container {
+	margin: 0 auto;
+	width: 90%;
+	background-color: blue;
+}
+
+.champ-list {
+	width: 85vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.champ-tag {
+	display: inline;
+}
