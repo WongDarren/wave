@@ -8,7 +8,7 @@ const ChampionCard = ({ champion }) => {
 			<h4>{champion.title}</h4>
 			<p>
 				{Object.values(champion.tags).map((tag) => (
-					<p className='champ-tag'>{`${tag}`}</p>
+					<p className='champ-tag'>{`${tag} `}</p>
 				))}
 			</p>
 			<p>Difficulty: {champion.info.difficulty}</p>

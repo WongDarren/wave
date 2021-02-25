@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 // Components
+import Landing from './components/layouts/Landing';
 import ChampionsList from './components/champions/ChampionList';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
 		<Router>
 			<Fragment>
 				<Switch>
+					<Route exact path='/' component={Landing} />
 					<Route exact path='/champions' component={ChampionsList} />
 				</Switch>
 			</Fragment>

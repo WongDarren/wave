@@ -4,6 +4,12 @@ import axios from 'axios';
 
 import ChampionCard from './ChampionCard';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
 const ChampionsList = (props) => {
 	const [champsList, setChamps] = useState(null);
 
@@ -11,8 +17,6 @@ const ChampionsList = (props) => {
 		async function getChamps() {
 			const res = await axios.get('/api/champions');
 			const champs = res.data;
-			// console.log('The champs that I requested: ');
-			// console.log(champs);
 
 			setChamps(champs);
 		}
@@ -21,16 +25,16 @@ const ChampionsList = (props) => {
 
 	return (
 		<Fragment>
-			<div className='container'>
-				<h1>Champions</h1>
-				<div className='champ-list'>
-					{champsList && console.log(Object.values(champsList))}
+			<Container>
+				<Row>
 					{champsList &&
 						Object.values(champsList).map((champion) => (
-							<ChampionCard champion={champion} />
+							<Col xs={6} sm={4}>
+								<ChampionCard champion={champion} />
+							</Col>
 						))}
-				</div>
-			</div>
+				</Row>
+			</Container>
 		</Fragment>
 	);
 };
